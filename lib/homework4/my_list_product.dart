@@ -1,3 +1,4 @@
+import 'package:caominhtien_61cntt2/homework4/dialog.dart';
 import 'package:caominhtien_61cntt2/homework4/product.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,10 +19,18 @@ class MyListProduct extends StatelessWidget {
   }
 }
 
-class MyManagerProductPage extends StatelessWidget {
+class MyManagerProductPage extends StatefulWidget {
   const MyManagerProductPage({Key? key}) : super(key: key);
 
-  List<Slidable> createListView(BuildContext context) {
+  @override
+  State<MyManagerProductPage> createState() => _MyManagerProductPageState();
+}
+
+class _MyManagerProductPageState extends State<MyManagerProductPage> {
+  late BuildContext listViewContext;
+
+  List<Widget> createListView(BuildContext context) {
+    listViewContext = context;
     var products = context.watch<ManageProducts>().products;
     var re = products
         .map((e) => Slidable(
@@ -30,16 +39,21 @@ class MyManagerProductPage extends StatelessWidget {
                 motion: const ScrollMotion(),
                 children: [
                   SlidableAction(
-                    onPressed: (context) {
-                      context.read<ManageProducts>().del(e);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Xóa sản phẩm ${e.name} thành công'),
-                          duration: const Duration(
-                            seconds: 3,
+                    onPressed: (context) async {
+                      var confirm = await showConfirmDialog(listViewContext,
+                          'Bạn có chắc muốn xóa sản phẩm ${e.name} không?');
+                      // debugPrint(confirm);
+                      if (confirm == 'ok') {
+                        listViewContext.read<ManageProducts>().del(e);
+                        ScaffoldMessenger.of(listViewContext).showSnackBar(
+                          SnackBar(
+                            content: Text('Xóa sản phẩm ${e.name} thành công'),
+                            duration: const Duration(
+                              seconds: 3,
+                            ),
                           ),
-                        ),
-                      );
+                        );
+                      }
                     },
                     backgroundColor: Colors.red,
                     foregroundColor: Colors.white,
@@ -116,6 +130,7 @@ class MyManagerProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // listViewContext = context;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Danh sách sản phẩm'),
