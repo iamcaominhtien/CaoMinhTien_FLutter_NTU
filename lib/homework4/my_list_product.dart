@@ -1,4 +1,4 @@
-import 'package:caominhtien_61cntt2/BaiTap4/product.dart';
+import 'package:caominhtien_61cntt2/homework4/product.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -53,7 +53,7 @@ class MyManagerProductPage extends StatelessWidget {
                     icon: Icons.update,
                     label: 'Cập nhật',
                   ),
-                  SlidableAction(
+                  const SlidableAction(
                     onPressed: null,
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
@@ -119,7 +119,7 @@ class MyManagerProductPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Danh sách sản phẩm'),
-        actions: [
+        actions: const [
           IconButton(
             onPressed: null,
             icon: Icon(
