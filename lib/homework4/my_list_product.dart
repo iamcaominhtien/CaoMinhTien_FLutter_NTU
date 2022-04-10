@@ -3,6 +3,7 @@ import 'package:caominhtien_61cntt2/homework4/product.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'product_function.dart';
 
 class MyListProduct extends StatelessWidget {
   const MyListProduct({Key? key}) : super(key: key);
@@ -28,6 +29,8 @@ class MyManagerProductPage extends StatefulWidget {
 
 class _MyManagerProductPageState extends State<MyManagerProductPage> {
   late BuildContext listViewContext;
+  dynamic productFunc;
+  late BuildContext viewContext;
 
   List<Widget> createListView(BuildContext context) {
     listViewContext = context;
@@ -60,15 +63,43 @@ class _MyManagerProductPageState extends State<MyManagerProductPage> {
                     icon: Icons.delete,
                     label: 'Xóa',
                   ),
-                  const SlidableAction(
-                    onPressed: null,
+                  SlidableAction(
+                    onPressed: (context) {
+                      productFunc = FunctionProduct('update', e);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Scaffold(
+                              appBar: AppBar(title: Text(productFunc.title())),
+                              body: productFunc.show(context),
+                            );
+                          },
+                        ),
+                      );
+                    },
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                     icon: Icons.update,
                     label: 'Cập nhật',
                   ),
-                  const SlidableAction(
-                    onPressed: null,
+                  SlidableAction(
+                    onPressed: (context) {
+                      productFunc = FunctionProduct('see', e);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (context) {
+                            return Scaffold(
+                              appBar: AppBar(
+                                title: Text(productFunc.title()),
+                              ),
+                              body: productFunc.show(context),
+                            );
+                          },
+                        ),
+                      );
+                    },
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
                     icon: Icons.remove_red_eye_outlined,
@@ -131,13 +162,30 @@ class _MyManagerProductPageState extends State<MyManagerProductPage> {
   @override
   Widget build(BuildContext context) {
     // listViewContext = context;
+    viewContext = context;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Danh sách sản phẩm'),
-        actions: const [
+        actions: [
           IconButton(
-            onPressed: null,
-            icon: Icon(
+            onPressed: () {
+              productFunc = FunctionProduct('new');
+              Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (context) {
+                    return Scaffold(
+                      appBar: AppBar(
+                        title: Text(productFunc.title()),
+                      ),
+                      body: productFunc.show(context),
+                    );
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
               Icons.add_circle,
               color: Colors.white,
             ),

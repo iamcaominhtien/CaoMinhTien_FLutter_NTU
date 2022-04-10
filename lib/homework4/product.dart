@@ -54,11 +54,6 @@ class ManageProducts extends ChangeNotifier {
 
   List<Product> get products => _products;
 
-  // void del(int index) {
-  //   _products.removeAt(index);
-  //   notifyListeners();
-  // }
-
   void del(Product s) {
     _products.removeAt(_products.indexOf(s));
     notifyListeners();
