@@ -1,3 +1,4 @@
+import 'package:caominhtien_61cntt2/homework4/edited/my_list_product_edited.dart';
 import 'package:caominhtien_61cntt2/photoAlbum.dart';
 import 'package:caominhtien_61cntt2/provider/my_app.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyListProduct(),
+      home: const MyListProduct_Edited(),
     );
   }
 }

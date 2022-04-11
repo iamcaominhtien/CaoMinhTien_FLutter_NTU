@@ -80,7 +80,6 @@ class FunctionProduct {
       child: Column(
         children: [
           TextField(
-            enableInteractiveSelection: false,
             readOnly: (_type == "see"),
             controller: name,
             decoration: const InputDecoration(
@@ -90,7 +89,6 @@ class FunctionProduct {
             height: 10,
           ),
           TextField(
-            enableInteractiveSelection: false,
             readOnly: (_type == "see"),
             controller: description,
             decoration: const InputDecoration(
@@ -100,7 +98,6 @@ class FunctionProduct {
             height: 10,
           ),
           TextField(
-            enableInteractiveSelection: false,
             readOnly: (_type == "see"),
             controller: price,
             decoration: const InputDecoration(
