@@ -1,3 +1,5 @@
+import 'package:rflutter_alert/rflutter_alert.dart';
+
 import 'navigator_page.dart';
 import 'product_edited.dart';
 import 'package:flutter/material.dart';
@@ -5,11 +7,14 @@ import 'package:provider/provider.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'alert_dialog.dart';
 
+late BuildContext listViewContext2;
+
 class MyListProduct_Edited extends StatelessWidget {
   const MyListProduct_Edited({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    listViewContext2 = context;
     return ChangeNotifierProvider(
       create: (context) => ManageProducts(),
       child: const MaterialApp(
@@ -83,8 +88,7 @@ class _MyManagerProductPageState extends State<MyManagerProductPage> {
                 children: [
                   SlidableAction(
                     onPressed: (context) async {
-                      var confirm = await showConfirmDialog(listViewContext);
-                      // debugPrint(confirm);
+                      var confirm = await showConfirmDialog(listViewContext2);
                     },
                     backgroundColor: Colors.red,
                     foregroundColor: Colors.white,
