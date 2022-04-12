@@ -85,21 +85,6 @@ class _MyManagerProductPageState extends State<MyManagerProductPage> {
                     onPressed: (context) async {
                       var confirm = await showConfirmDialog(listViewContext);
                       // debugPrint(confirm);
-                      if (confirm == 'ok') {
-                        String nameProduct = listproduct.products[index].name;
-                        listViewContext
-                            .read<ManageProducts>()
-                            .del(listproduct.products[index]);
-                        ScaffoldMessenger.of(listViewContext).showSnackBar(
-                          SnackBar(
-                            content:
-                                Text('Xóa sản phẩm $nameProduct thành công'),
-                            duration: const Duration(
-                              seconds: 3,
-                            ),
-                          ),
-                        );
-                      }
                     },
                     backgroundColor: Colors.red,
                     foregroundColor: Colors.white,
