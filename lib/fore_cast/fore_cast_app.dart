@@ -46,16 +46,16 @@ class _MyForeCastPageState extends State<MyForeCastPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //Cái này tui nghĩ là dùng Image, nhưng lười tìm quá nên xài tạm Icon
-              const Icon(
-                Icons.wb_sunny,
-                size: 140.0,
+              Image.asset(
+                'assets/weather/sunny.png',
+                scale: 2.0,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 30),
                 child: Text(
                   '${myforecast.qlthoitiet.nhietdo}',
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 40, fontWeight: FontWeight.bold),
                 ),
               ),
               const Padding(
@@ -65,7 +65,7 @@ class _MyForeCastPageState extends State<MyForeCastPage> {
                   style: TextStyle(fontSize: 30),
                 ),
               ),
-              Text('${myforecast.qlthoitiet.date}'),
+              Text(myforecast.qlthoitiet.date),
               Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Row(

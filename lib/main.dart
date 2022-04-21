@@ -1,5 +1,6 @@
 import 'package:caominhtien_61cntt2/fore_cast/fore_cast_app.dart';
 import 'package:caominhtien_61cntt2/homework4/edited/my_list_product_edited.dart';
+import 'package:caominhtien_61cntt2/manage_cast/manage_cast_app.dart';
 import 'package:caominhtien_61cntt2/photoAlbum.dart';
 import 'package:caominhtien_61cntt2/photoAlbum_Phuong/phuong_album.dart';
 import 'package:caominhtien_61cntt2/provider/my_app.dart';
@@ -16,7 +17,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  // This weather is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ForeCastApp(),
+      home: const ManageCastApp(),
     );
   }
 }

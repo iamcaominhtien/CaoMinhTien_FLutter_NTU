@@ -31,4 +31,5 @@ flutter:
   assets:
     - assets/photoAlbum/
     - assets/gridView/
+    - assets/weather/
 #    - packages/rflutter_alert/assets/images/
