@@ -1,4 +1,4 @@
-import 'package:caominhtien_61cntt2/fore_cast/fore_cast.dart';
+import 'package:caominhtien_61cntt2/fore_cast/fore_cast_app.dart';
 import 'package:caominhtien_61cntt2/homework4/edited/my_list_product_edited.dart';
 import 'package:caominhtien_61cntt2/photoAlbum.dart';
 import 'package:caominhtien_61cntt2/photoAlbum_Phuong/phuong_album.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ForeCast(),
+      home: const ForeCastApp(),
     );
   }
 }

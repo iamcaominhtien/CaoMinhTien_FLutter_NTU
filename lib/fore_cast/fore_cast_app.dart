@@ -1,18 +1,17 @@
 import 'package:caominhtien_61cntt2/fore_cast/change_notifier_forecast.dart';
 import 'package:caominhtien_61cntt2/fore_cast/thoi_tiet.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
-class ForeCast extends StatefulWidget {
-  const ForeCast({Key? key}) : super(key: key);
+class ForeCastApp extends StatefulWidget {
+  const ForeCastApp({Key? key}) : super(key: key);
 
   @override
-  State<ForeCast> createState() => _ForeCastState();
+  State<ForeCastApp> createState() => _ForeCastAppState();
 }
 
-class _ForeCastState extends State<ForeCast> {
+class _ForeCastAppState extends State<ForeCastApp> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
