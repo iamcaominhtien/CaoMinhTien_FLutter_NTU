@@ -1,11 +1,13 @@
+import 'package:caominhtien_61cntt2/fore_cast/fore_cast.dart';
 import 'package:caominhtien_61cntt2/homework4/edited/my_list_product_edited.dart';
 import 'package:caominhtien_61cntt2/photoAlbum.dart';
+import 'package:caominhtien_61cntt2/photoAlbum_Phuong/phuong_album.dart';
 import 'package:caominhtien_61cntt2/provider/my_app.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'homework4//my_list_product.dart';
 import 'form/PageFormGoods.dart';
 import 'gridView/grid_view.dart';
-import 'my_input.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyListProduct_Edited(),
+      home: const ForeCast(),
     );
   }
 }

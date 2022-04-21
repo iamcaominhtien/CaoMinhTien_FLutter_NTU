@@ -29,6 +29,7 @@ class MyManagerProductPage extends StatefulWidget {
 
 class _MyManagerProductPageState extends State<MyManagerProductPage> {
   late BuildContext listViewContext;
+
   @override
   Widget build(BuildContext context) {
     listViewContext = context;
