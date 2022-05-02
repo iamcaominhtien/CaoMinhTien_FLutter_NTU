@@ -1,4 +1,3 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iamcaominhtien/CaoMinhTien_FLutter_NTU/HEAD)
 # caominhtien_61cntt2
 
 A new Flutter project.
