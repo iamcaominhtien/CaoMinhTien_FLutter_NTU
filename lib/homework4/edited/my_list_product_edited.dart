@@ -12,10 +12,7 @@ class MyListProduct_Edited extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => ManageProducts(),
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: MyManagerProductPage(),
-      ),
+      child: const MyManagerProductPage(),
     );
   }
 }

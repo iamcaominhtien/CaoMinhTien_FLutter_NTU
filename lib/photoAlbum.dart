@@ -13,13 +13,19 @@ class _MyPhotoAlbumState extends State<MyPhotoAlbum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('My Photo Album'),
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Image.asset('assets/photoAlbum/pic$indexPic.jpg'),
+              child: Image.asset(
+                'assets/photoAlbum/pic$indexPic.jpg',
+                height: 550,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

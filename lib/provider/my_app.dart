@@ -9,12 +9,11 @@ class MyCounterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (context) => Counter(),
-        // child: const MaterialApp(
-        //   home: MyCounterPage(),
-        // ));
-        child: const MaterialApp(
-          home: MyCounterPage(),
-        ));
+      create: (context) => Counter(),
+      // child: const MaterialApp(
+      //   home: MyCounterPage(),
+      // ));
+      child: const MyCounterPage(),
+    );
   }
 }
