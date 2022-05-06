@@ -1,5 +1,4 @@
 import 'package:caominhtien_61cntt2/homework5/screen/vnexpress_app.dart';
-import 'package:caominhtien_61cntt2/homework5/screen/webview_example.dart';
 import 'package:caominhtien_61cntt2/json/list_json_photo_app.dart';
 import 'package:caominhtien_61cntt2/my_provider/manage_product_app.dart';
 import 'homework4/edited/my_list_product_edited.dart';
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const MyHome(),
+        '/': (context) => const MyApp(),
         '/form': (context) => const PageFormGoods(),
         '/grid_view': (context) => const GridViewPage(),
         '/manage_cast_app': (context) => const ManageCastApp(),
@@ -90,9 +89,13 @@ class MyHome extends StatelessWidget {
               nameNavigator: '/my_photo_album',
             ),
             ButtonForwarding(
-                labelButton: 'Stateful Widget', nameNavigator: '/my_stateful'),
+              labelButton: 'Stateful Widget',
+              nameNavigator: '/my_stateful',
+            ),
             ButtonForwarding(
-                labelButton: 'My Input Page', nameNavigator: '/my_input_page'),
+              labelButton: 'My Input Page',
+              nameNavigator: '/my_input_page',
+            ),
             ButtonForwarding(
               labelButton: 'My Image',
               nameNavigator: '/my_img',

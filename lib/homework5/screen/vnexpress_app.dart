@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:caominhtien_61cntt2/homework5/components/rss_helper.dart';
 import 'package:caominhtien_61cntt2/homework5/components/rss_item.dart';
 import 'package:caominhtien_61cntt2/homework5/screen/rss_list.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter/material.dart';
 
 class VNExpressApp extends StatefulWidget {
@@ -13,13 +12,13 @@ class VNExpressApp extends StatefulWidget {
 }
 
 class _VNExpressAppState extends State<VNExpressApp> {
-  late Future<List<RSSItem>?> rssItems;
+  late Future<List<RSSItem>> rssItems;
 
   @override
   void initState() {
     super.initState();
     rssItems = RSSHelper.readVNExpressRSS();
-    if (Platform.isAndroid) WebView.platform = AndroidWebView();
+    // if (Platform.isAndroid) WebView.platform = AndroidWebView();
   }
 
   Widget getImage(String? url) {
@@ -40,26 +39,32 @@ class _VNExpressAppState extends State<VNExpressApp> {
       appBar: AppBar(
         title: const Text('VNExpress'),
       ),
-      body: RefreshIndicator(onRefresh: () async {
-        debugPrint('onRefresh');
-        rssItems = RSSHelper.readVNExpressRSS().whenComplete(() {
-          setState(() {});
-        });
-      }, child: FutureBuilder<List<RSSItem>>(
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            debugPrint('Loi xay ra');
-            return const Text('Loi xay ra');
-          } else {
-            debugPrint("Error,${snapshot.hasData}");
-            return snapshot.hasData
-                ? RSSList(rss: snapshot.data!)
-                : const Center(
-                    child: CircularProgressIndicator(),
-                  );
-          }
-        },
-      )),
+      body: RefreshIndicator(
+          onRefresh: () async {
+            debugPrint('onRefresh');
+            setState(() {
+              rssItems = RSSHelper.readVNExpressRSS();
+            });
+            // rssItems = RSSHelper.readVNExpressRSS().whenComplete(() {
+            //   setState(() {});
+            // });
+          },
+          child: FutureBuilder<List<RSSItem>>(
+            future: rssItems,
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                debugPrint('Loi xay ra');
+                return const Text('Loi xay ra');
+              } else {
+                debugPrint("Has Data?,${snapshot.hasData}");
+                return snapshot.hasData
+                    ? (RSSList(rss: snapshot.data!))
+                    : const Center(
+                        child: CircularProgressIndicator(),
+                      );
+              }
+            },
+          )),
     );
   }
 }
