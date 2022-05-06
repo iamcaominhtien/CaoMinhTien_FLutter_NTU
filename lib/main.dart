@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const MyApp(),
+        '/': (context) => const MyHome(),
         '/form': (context) => const PageFormGoods(),
         '/grid_view': (context) => const GridViewPage(),
         '/manage_cast_app': (context) => const ManageCastApp(),

@@ -1,8 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:caominhtien_61cntt2/homework5/components/rss_item.dart';
 import 'package:flutter/material.dart';
-
-import 'web_view_page.dart';
+import 'my_webview_page.dart';
 
 class RSSList extends StatelessWidget {
   final List<RSSItem> rss;
@@ -32,20 +31,36 @@ class RSSList extends StatelessWidget {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 debugPrint(rss[index].link);
-                return WebViewPage(
+                return MyWebViewPage(
                   url: rss[index].link!,
                 );
               }));
             },
             child: ListTile(
-              title: Row(children: [
-                // Image.asset(rss[index].title!),
-                Expanded(child: getImage(rss[index].imgUrl)),
-                const SizedBox(
-                  width: 15,
-                ),
-                Expanded(child: Text(rss[index].title!)),
-              ]),
+              title: Column(
+                children: [
+                  Row(
+                    children: [
+                      // Image.asset(rss[index].title!),
+                      Expanded(child: getImage(rss[index].imgUrl)),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(
+                        child: Text(
+                          rss[index].title!,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 15),
+                  Text(rss[index].description ?? "NULL"),
+                  const SizedBox(height: 15),
+                ],
+              ),
             ),
           );
         },
