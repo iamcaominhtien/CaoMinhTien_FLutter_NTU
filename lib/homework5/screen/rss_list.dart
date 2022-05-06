@@ -25,49 +25,56 @@ class RSSList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                debugPrint(rss[index].link);
-                return MyWebViewPage(
-                  url: rss[index].link!,
-                );
-              }));
-            },
-            child: ListTile(
-              title: Column(
-                children: [
-                  Row(
-                    children: [
-                      // Image.asset(rss[index].title!),
-                      Expanded(child: getImage(rss[index].imgUrl)),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(
-                        child: Text(
-                          rss[index].title!,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
+    return Scrollbar(
+      interactive: true,
+      trackVisibility: true,
+      thickness: 10,
+      // isAlwaysShown: true,
+      child: ListView.separated(
+          scrollDirection: Axis.vertical,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  debugPrint(rss[index].link);
+                  return MyWebViewPage(
+                    url: rss[index].link!,
+                  );
+                }));
+              },
+              child: ListTile(
+                title: Column(
+                  children: [
+                    Row(
+                      children: [
+                        // Image.asset(rss[index].title!),
+                        Expanded(child: getImage(rss[index].imgUrl)),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Expanded(
+                          child: Text(
+                            rss[index].title!,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  Text(rss[index].description ?? "NULL"),
-                  const SizedBox(height: 15),
-                ],
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    Text(rss[index].description ?? "NULL"),
+                    const SizedBox(height: 15),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
-        separatorBuilder: (context, index) => const Divider(
-              height: 1,
-              thickness: 1,
-            ),
-        itemCount: rss.length);
+            );
+          },
+          separatorBuilder: (context, index) => const Divider(
+                height: 1,
+                thickness: 1,
+              ),
+          itemCount: rss.length),
+    );
   }
 }
