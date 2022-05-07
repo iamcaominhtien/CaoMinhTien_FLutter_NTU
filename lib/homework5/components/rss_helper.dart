@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml2json/xml2json.dart';
 import 'rss_item.dart';
+import 'constants.dart';
 
 class RSSHelper {
-  // static String _rssURL = 'http://vnexpress.net/rss/tin-moi-nhat.rss';
+  static String rssURL = listRSS['Trang chủ']!;
 
   static Future<List<dynamic>?> fetchRSS() async {
     final response =
-        await http.get(Uri.parse('http://vnexpress.net/rss/tin-moi-nhat.rss'));
+        await http.get(Uri.parse(rssURL));
     if (response.statusCode == 200) {
       final xml2Json = Xml2Json();
       xml2Json.parse(utf8.decode(response.bodyBytes));
