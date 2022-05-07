@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 
-import 'package:caominhtien_61cntt2/sqlite/sample/alert_dialog.dart';
+import 'package:caominhtien_61cntt2/sqlite/sample/components/alert_dialog.dart';
 
 import 'page_user_detail.dart';
-import 'provider_data.dart';
+import '../components/provider_data.dart';
 
 class PageListUserSQLite extends StatefulWidget {
   const PageListUserSQLite({

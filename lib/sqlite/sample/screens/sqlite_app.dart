@@ -1,4 +1,4 @@
-import 'package:caominhtien_61cntt2/sqlite/sample/provider_data.dart';
+import 'package:caominhtien_61cntt2/sqlite/sample/components/provider_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'page_user_detail.dart';

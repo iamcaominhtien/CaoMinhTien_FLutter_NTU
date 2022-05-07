@@ -1,4 +1,4 @@
-import 'package:caominhtien_61cntt2/sqlite/sample/sqlite_data.dart';
+import 'package:caominhtien_61cntt2/sqlite/sample/components/sqlite_data.dart';
 import 'package:flutter/foundation.dart';
 
 ///Quan li trang thai database

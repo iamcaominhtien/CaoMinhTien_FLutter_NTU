@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'provider_data.dart';
-import 'sqlite_data.dart';
+import '../components/provider_data.dart';
+import '../components/sqlite_data.dart';
 
 class PageSQLiteDetail extends StatefulWidget {
   final bool? see;
