@@ -8,6 +8,7 @@ class PhuongAlbum extends StatefulWidget {
 }
 
 class _PhuongAlbumState extends State<PhuongAlbum> {
+  // ignore: non_constant_identifier_names
   int current_image = 1;
 
   @override

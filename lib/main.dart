@@ -4,14 +4,14 @@ import 'package:caominhtien_61cntt2/my_provider/manage_product_app.dart';
 import 'package:caominhtien_61cntt2/sqlite/sample/screens/sqlite_app.dart';
 import 'homework4/edited/my_list_product_edited.dart';
 import 'manage_cast/manage_cast_app.dart';
-import 'photoAlbum.dart';
+import 'photo_album.dart';
 import 'provider/my_app.dart';
 import 'package:flutter/material.dart';
-import 'form/PageFormGoods.dart';
+import 'form/page_form_goods.dart';
 import 'gridView/grid_view.dart';
 import 'my_image.dart';
 import 'my_input.dart';
-import 'my_stateFull.dart';
+import 'my_statefull_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         '/vnexpress': (context) => const VNExpressApp(),
         '/sqlite_demo': (context) => const SQLiteApp(),
       },
-    );
+    );  
   }
 }
 

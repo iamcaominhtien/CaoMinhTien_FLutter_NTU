@@ -119,11 +119,11 @@ class _MyCartPageState extends State<MyCartPage> {
                                 ),
                                 ElevatedButton(
                                   onPressed: () {
-                                    var SPmoi = SanPhamm(
+                                    var spMoi = SanPhamm(
                                         tenSP: tenSP.text,
                                         gia: double.parse(gia.text));
                                     Provider.of<GioHang>(context, listen: false)
-                                        .addToCart(SPmoi);
+                                        .addToCart(spMoi);
                                     Navigator.pop(context);
                                   },
                                   child: const Text('Thêm'),

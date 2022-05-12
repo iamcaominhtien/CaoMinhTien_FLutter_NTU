@@ -3,12 +3,13 @@ import 'package:provider/provider.dart';
 
 import 'product_edited.dart';
 
+// ignore: must_be_immutable
 class NavigatorPage extends StatelessWidget {
   late final String title;
   late final String type;
   late final BuildContext viewcontext;
   late String titleOfButton;
-  Product? product;
+  final Product? product;
   TextEditingController name = TextEditingController();
   TextEditingController description = TextEditingController();
   TextEditingController price = TextEditingController();

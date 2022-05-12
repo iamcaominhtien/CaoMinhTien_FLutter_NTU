@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'alert_dialog.dart';
 
+// ignore: camel_case_types
 class MyListProduct_Edited extends StatelessWidget {
   const MyListProduct_Edited({Key? key}) : super(key: key);
 
