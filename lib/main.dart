@@ -1,4 +1,5 @@
 import 'package:caominhtien_61cntt2/homework5/screen/vnexpress_app.dart';
+import 'package:caominhtien_61cntt2/homework6/cpu_z/screens/cpu_home_page.dart';
 import 'package:caominhtien_61cntt2/json/list_json_photo_app.dart';
 import 'package:caominhtien_61cntt2/my_provider/manage_product_app.dart';
 import 'package:caominhtien_61cntt2/sqlite/sample/screens/sqlite_app.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/json_photo': (context) => const MyJsonPhoto(),
         '/vnexpress': (context) => const VNExpressApp(),
         '/sqlite_demo': (context) => const SQLiteApp(),
+        '/cpu_reader': (context) => const CPUReader(),
       },
     );  
   }
@@ -64,6 +66,10 @@ class MyHome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
+            ButtonForwarding(
+              labelButton: 'CPU Reader',
+              nameNavigator: '/cpu_reader',
+            ),
             ButtonForwarding(
               labelButton: 'SQLite App Demo',
               nameNavigator: '/sqlite_demo',
