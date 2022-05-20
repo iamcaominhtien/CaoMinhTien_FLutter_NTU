@@ -24,7 +24,6 @@ dependencies:
   webview_flutter: ^3.0.2
   webview_flutter_plus: ^0.3.0+2
   sqflite: ^2.0.2+1
-  geolocator: ^8.2.1
   fluttercontactpicker: ^4.6.0
   flutter_contact: ^0.9.1+8
   url_launcher: ^6.1.2
@@ -33,6 +32,11 @@ dependencies:
   battery_info: ^1.1.1
   flutter_blue: ^0.8.0
   flutter_reactive_ble: ^5.0.2
+  firebase_core: ^1.17.0
+  cloud_firestore: ^3.1.15
+  firebase_database: ^9.0.14
+  image_picker: ^0.8.5+3
+  firebase_storage: ^10.2.16
 
 dev_dependencies:
   flutter_test:

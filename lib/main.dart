@@ -1,3 +1,4 @@
+import 'package:caominhtien_61cntt2/firebase/filebase_app.dart';
 import 'package:caominhtien_61cntt2/homework5/screen/vnexpress_app.dart';
 import 'package:caominhtien_61cntt2/homework6/cpu_z/screens/cpu_home_page.dart';
 import 'package:caominhtien_61cntt2/json/list_json_photo_app.dart';
@@ -47,8 +48,9 @@ class MyApp extends StatelessWidget {
         '/vnexpress': (context) => const VNExpressApp(),
         '/sqlite_demo': (context) => const SQLiteApp(),
         '/cpu_reader': (context) => const CPUReader(),
+        '/firebase': (context) => const FireBaseApp(),
       },
-    );  
+    );
   }
 }
 
@@ -66,6 +68,10 @@ class MyHome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
+            ButtonForwarding(
+              labelButton: 'Firebase App',
+              nameNavigator: '/firebase',
+            ),
             ButtonForwarding(
               labelButton: 'CPU Reader',
               nameNavigator: '/cpu_reader',
