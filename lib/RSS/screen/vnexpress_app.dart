@@ -1,6 +1,6 @@
-import 'package:caominhtien_61cntt2/homework5/components/rss_helper.dart';
-import 'package:caominhtien_61cntt2/homework5/components/rss_item.dart';
-import 'package:caominhtien_61cntt2/homework5/screen/rss_list.dart';
+import 'package:caominhtien_61cntt2/RSS/components/rss_helper.dart';
+import 'package:caominhtien_61cntt2/RSS/components/rss_item.dart';
+import 'package:caominhtien_61cntt2/RSS/screen/rss_list.dart';
 import 'package:flutter/material.dart';
 import '../components/constants.dart';
 

@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:caominhtien_61cntt2/homework5/components/vnexpress_rssitem.dart';
+import 'package:caominhtien_61cntt2/RSS/components/vnexpress_rssitem.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml2json/xml2json.dart';
@@ -10,8 +10,7 @@ class RSSHelper {
   static String rssURL = listRSS['Trang chủ']!;
 
   static Future<List<dynamic>?> fetchRSS() async {
-    final response =
-        await http.get(Uri.parse(rssURL));
+    final response = await http.get(Uri.parse(rssURL));
     if (response.statusCode == 200) {
       final xml2Json = Xml2Json();
       xml2Json.parse(utf8.decode(response.bodyBytes));

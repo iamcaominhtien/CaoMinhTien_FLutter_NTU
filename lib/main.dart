@@ -1,10 +1,13 @@
+import 'package:caominhtien_61cntt2/cpu_z/cpuz_app.dart';
 import 'package:caominhtien_61cntt2/firebase/filebase_app.dart';
-import 'package:caominhtien_61cntt2/homework5/screen/vnexpress_app.dart';
+import 'package:caominhtien_61cntt2/RSS/screen/vnexpress_app.dart';
 import 'package:caominhtien_61cntt2/homework6/cpu_z/screens/cpu_home_page.dart';
 import 'package:caominhtien_61cntt2/json/list_json_photo_app.dart';
 import 'package:caominhtien_61cntt2/my_provider/manage_product_app.dart';
 import 'package:caominhtien_61cntt2/sqlite/sample/screens/sqlite_app.dart';
+import 'fcm/fcm_loading_page.dart';
 import 'homework4/edited/my_list_product_edited.dart';
+import 'login_page/login_fcm_app.dart';
 import 'manage_cast/manage_cast_app.dart';
 import 'photo_album.dart';
 import 'provider/my_app.dart';
@@ -16,6 +19,7 @@ import 'my_input.dart';
 import 'my_statefull_widget.dart';
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -49,6 +53,9 @@ class MyApp extends StatelessWidget {
         '/sqlite_demo': (context) => const SQLiteApp(),
         '/cpu_reader': (context) => const CPUReader(),
         '/firebase': (context) => const FireBaseApp(),
+        '/fcm': (context) => const FCMLoadingPage(),
+        '/fcm_login': (context) => const LoginPageFCM(),
+        '/cpu-z': (context) => const CPUZApp(),
       },
     );
   }
@@ -63,11 +70,22 @@ class MyHome extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Hello 61.CNTT2'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 34),
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
+            ButtonForwarding(
+              labelButton: 'CPU-Z',
+              nameNavigator: '/cpu-z',
+            ),
+            ButtonForwarding(
+              labelButton: 'FCM Login Page',
+              nameNavigator: '/fcm_login',
+            ),
+            ButtonForwarding(
+              labelButton: 'FCM Demo',
+              nameNavigator: '/fcm',
+            ),
             ButtonForwarding(
               labelButton: 'Firebase App',
               nameNavigator: '/firebase',
@@ -143,15 +161,13 @@ class ButtonForwarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: ElevatedButton(
-          child: Text(labelButton),
-          onPressed: () {
-            Navigator.pushNamed(context, nameNavigator);
-          },
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+      child: ElevatedButton(
+        child: Text(labelButton),
+        onPressed: () {
+          Navigator.pushNamed(context, nameNavigator);
+        },
       ),
     );
   }

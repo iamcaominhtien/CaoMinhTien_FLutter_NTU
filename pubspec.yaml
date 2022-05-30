@@ -37,6 +37,10 @@ dependencies:
   firebase_database: ^9.0.14
   image_picker: ^0.8.5+3
   firebase_storage: ^10.2.16
+  firebase_messaging: ^11.4.0
+  flutter_local_notifications: ^9.5.3+1
+  flutter_app_badger: ^1.4.0
+  badges: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -51,4 +55,5 @@ flutter:
     - assets/photoAlbum/
     - assets/gridView/
     - assets/weather/
+    - assets/cpu_z/
 #    - packages/rflutter_alert/assets/images/

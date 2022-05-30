@@ -1,4 +1,4 @@
-import 'package:caominhtien_61cntt2/homework5/components/rss_item.dart';
+import 'package:caominhtien_61cntt2/RSS/components/rss_item.dart';
 
 class VNExpressRSSItem extends RSSItem {
   @override
