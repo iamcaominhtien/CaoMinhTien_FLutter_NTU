@@ -41,6 +41,11 @@ dependencies:
   flutter_local_notifications: ^9.5.3+1
   flutter_app_badger: ^1.4.0
   badges: ^2.0.2
+  font_awesome_flutter: ^10.1.0
+  firebase_auth: ^3.3.19
+  google_sign_in: ^5.3.2
+  camera: ^0.9.7+1
+#  path: ^1.8.2
 
 dev_dependencies:
   flutter_test:
@@ -56,4 +61,5 @@ flutter:
     - assets/gridView/
     - assets/weather/
     - assets/cpu_z/
+    - assets/login_page/
 #    - packages/rflutter_alert/assets/images/

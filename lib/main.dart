@@ -7,6 +7,7 @@ import 'package:caominhtien_61cntt2/my_provider/manage_product_app.dart';
 import 'package:caominhtien_61cntt2/sqlite/sample/screens/sqlite_app.dart';
 import 'fcm/fcm_loading_page.dart';
 import 'homework4/edited/my_list_product_edited.dart';
+import 'image_picker/image_picker_app.dart';
 import 'login_page/login_fcm_app.dart';
 import 'manage_cast/manage_cast_app.dart';
 import 'photo_album.dart';
@@ -19,7 +20,7 @@ import 'my_input.dart';
 import 'my_statefull_widget.dart';
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         '/sqlite_demo': (context) => const SQLiteApp(),
         '/cpu_reader': (context) => const CPUReader(),
         '/firebase': (context) => const FireBaseApp(),
+        '/image_picker': (context) => const ImagePickerApp(),
         '/fcm': (context) => const FCMLoadingPage(),
         '/fcm_login': (context) => const LoginPageFCM(),
         '/cpu-z': (context) => const CPUZApp(),
@@ -86,6 +88,10 @@ class MyHome extends StatelessWidget {
               labelButton: 'FCM Demo',
               nameNavigator: '/fcm',
             ),
+            // ButtonForwarding(
+            //   labelButton: 'Image Picker App',
+            //   nameNavigator: '/image_picker',
+            // ),
             ButtonForwarding(
               labelButton: 'Firebase App',
               nameNavigator: '/firebase',

@@ -1,6 +1,10 @@
 import 'package:caominhtien_61cntt2/cpu_z/battery_info.dart';
 import 'package:caominhtien_61cntt2/cpu_z/device_info.dart';
+import 'package:caominhtien_61cntt2/cpu_z/network_info.dart';
 import 'package:flutter/material.dart';
+
+import 'about_info.dart';
+import 'system_info.dart';
 
 class MenuBar extends StatefulWidget {
   const MenuBar({
@@ -15,7 +19,7 @@ class MenuBar extends StatefulWidget {
 }
 
 class _MenuBarState extends State<MenuBar> {
-  Widget? bodyContent;
+  Widget bodyContent = const DeviceInfo();
   int selected = 0;
 
   @override
@@ -88,7 +92,7 @@ class _MenuBarState extends State<MenuBar> {
             },
           ),
         ),
-        bodyContent ?? Container(),
+        bodyContent,
       ],
     );
   }
@@ -98,14 +102,20 @@ class _MenuBarState extends State<MenuBar> {
     setState(() {
       selected = index;
       switch (index) {
-        case 1:
+        case 0:
           bodyContent = const DeviceInfo();
           break;
-        case 3:
+        case 1:
+          bodyContent = const SystemInfo();
+          break;
+        case 2:
           bodyContent = const BatteryInfo();
           break;
+        case 3:
+          bodyContent = const NetworkInformation();
+          break;
         default:
-          bodyContent = const DeviceInfo();
+          bodyContent = const AboutInfo();
           break;
       }
     });

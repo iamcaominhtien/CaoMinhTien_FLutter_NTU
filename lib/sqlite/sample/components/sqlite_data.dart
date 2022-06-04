@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'constants.dart';
 
@@ -31,6 +32,7 @@ class DataBaseHelper {
   Future<String?> _getDatabasePath(String databaseName) async {
     String p = await getDatabasesPath();
     String _path = "$p/$databaseName";
+    debugPrint(_path);
     this._path = _path;
     return _path;
   }

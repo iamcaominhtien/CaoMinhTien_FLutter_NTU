@@ -12,15 +12,7 @@ class CPUZApp extends StatefulWidget {
 
 class _CPUZAppState extends State<CPUZApp> {
   int index = 0;
-  var menu = [
-    'SOC',
-    'DEVICE',
-    'SYSTEM',
-    'BATTERY',
-    'THERMAL',
-    'SENSORS',
-    'ABOUT'
-  ];
+  var menu = ['DEVICE', 'SYSTEM', 'BATTERY', 'NETWORK', 'ABOUT'];
 
   @override
   Widget build(BuildContext context) {
